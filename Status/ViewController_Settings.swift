@@ -11,10 +11,13 @@ import Cocoa
 class ViewController_Settings: NSViewController {
 
     @IBAction func changeView_settingsToStatus(_ sender: NSButton) {
-        if let myViewController = self.storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "StatusViewController")) as? StatusViewController {
-            self.view.window?.contentViewController = myViewController
+        if let svc = self.storyboard?.instantiateController(
+            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "StatusViewController")
+            ) as? StatusViewController {
+            self.view.window?.contentViewController = svc
         }
     }
+    
     @IBAction func quitApp(_ sender: NSButton) {
         NSApplication.shared.terminate(sender)
     }

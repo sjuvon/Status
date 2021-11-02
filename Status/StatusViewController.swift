@@ -1,5 +1,5 @@
 //
-//  StatusViewController.swift
+//  ViewController_Status
 //  Status
 //
 //  Created by Sjuvon Chung on 10/27/21.
@@ -23,10 +23,11 @@ class StatusViewController: NSViewController {
     @IBAction func changeView_statusToSettings(_ sender: NSButton) {
         // NSApplication.shared.terminate(sender)
         // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
-        if let myViewController = self.storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Settings")) as? ViewController_Settings {
-            self.view.window?.contentViewController = myViewController
+        if let sevc = self.storyboard?.instantiateController(
+            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Settings")
+        ) as? ViewController_Settings {
+            self.view.window?.contentViewController = sevc
         }
-        
     }
     
     var RAM = globalVariables.globalRAM
@@ -39,6 +40,7 @@ class StatusViewController: NSViewController {
         status_initial()
     }
     
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         
@@ -48,7 +50,6 @@ class StatusViewController: NSViewController {
             name: Notification.Name("NewFunctionName"),
             object: nil
         )
-        
     }
     
     

@@ -29,6 +29,7 @@ public class RAM {
             Red    <~~~> Compressed 4.5+
     */
     let factor: Double = Double( Double(4096) / Double(1024*1024*1024) )
+    var display: [String:Double] = [:]
     
     var free: Double
     var speculative: Double
@@ -41,11 +42,14 @@ public class RAM {
     var app: Double
     var total: Double
     var used: Double
+    
+    /*
     var percentUsed: Double
     var percentFree: Double
     var percentCompressed: Double
     var percentFI: Double
     var percentWA: Double
+    */
     
     
     public init() {
@@ -74,11 +78,20 @@ public class RAM {
         self.app = rounder(x: temp_app)
         self.total = rounder(x: temp_total)
         self.used = rounder(x: temp_used)
+        
+        self.display["used"] = rounder(x: (temp_used/temp_total)*100)
+        self.display["free"] = rounder(x: (temp_free/temp_total)*100)
+        self.display["compressed"] = rounder(x: 100 - ((temp_compressor/temp_total)*100))
+        self.display["FI"] = rounder(x: ((temp_free + temp_inactive)/temp_total)*100)
+        self.display["WA"] = rounder(x: ((temp_wired + temp_active)/temp_total)*100)
+            
+        /*
         self.percentUsed = rounder(x: (temp_used/temp_total)*100)
         self.percentFree = rounder(x: (temp_free/temp_total)*100)
         self.percentCompressed = rounder(x: 100 - ((temp_compressor/temp_total)*100))
         self.percentFI = rounder(x: ((temp_free + temp_inactive)/temp_total)*100)
         self.percentWA = rounder(x: ((temp_wired + temp_active)/temp_total)*100)
+        */
     }
     
     
@@ -108,12 +121,12 @@ public class RAM {
         self.purgeable = rounder(x: temp_purgeable)
         self.app = rounder(x: temp_app)
         self.total = rounder(x: temp_total)
-        self.used = rounder(x: temp_used)
-        self.percentUsed = rounder(x: (temp_used/temp_total)*100)
-        self.percentFree = rounder(x: (temp_free/temp_total)*100)
-        self.percentCompressed = rounder(x: 100 - ((temp_compressor/temp_total)*100))
-        self.percentFI = rounder(x: ((temp_free + temp_inactive)/temp_total)*100)
-        self.percentWA = rounder(x: ((temp_wired + temp_active)/temp_total)*100)
+        
+        self.display["used"] = rounder(x: (temp_used/temp_total)*100)
+        self.display["free"] = rounder(x: (temp_free/temp_total)*100)
+        self.display["compressed"] = rounder(x: 100 - ((temp_compressor/temp_total)*100))
+        self.display["FI"] = rounder(x: ((temp_free + temp_inactive)/temp_total)*100)
+        self.display["WA"] = rounder(x: ((temp_wired + temp_active)/temp_total)*100)
     }
     
     

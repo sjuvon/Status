@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             E.g., An ad-hoc solution:
                 $ NSApplication.shared.windows.last!.close()
         */
+        
         menuBarIconSetter()
         popover.contentViewController = ViewController_Status.freshController()
         vm_Timer()
@@ -73,11 +74,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
     }
     
+    
     @objc func menuBarIconSetter() {
         /*  To set the app's menu bar icon.  */
         if let button = menuBarItem.button {
-            button.title = "RAM: \(RAM.percentCompressed)%"
+            let paragraph = NSMutableParagraphStyle()
+            paragraph.alignment = .left
+            let titleAligned =  NSAttributedString(
+                string: "RAM: \(RAM.display["compressed"]!)%",
+                attributes: [
+                    NSAttributedStringKey.paragraphStyle: paragraph,
+                    NSAttributedStringKey.foregroundColor: NSColor.systemGreen,
+                    NSAttributedStringKey.font: NSFont.systemFont(ofSize: 14)
+                ]
+            )
+            
+            button.attributedTitle = titleAligned
             button.action = #selector(togglePopover(_:))
+            // button.imagePosition = NSControl.ImagePosition.imageRight
+            // button.font = NSFont(name: "typeFace", size: 14)
+            /*
+            button.frame = CGRect(
+                x: -10.0,
+                y: 0.5,
+                width: button.frame.width,
+                height: button.frame.height
+            )
+            */
         }
     }
     

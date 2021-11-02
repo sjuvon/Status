@@ -11,10 +11,10 @@ import Cocoa
 class ViewController_Settings: NSViewController {
 
     @IBAction func changeView_settingsToStatus(_ sender: NSButton) {
-        if let svc = self.storyboard?.instantiateController(
+        if let statusVC = self.storyboard?.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Status")
             ) as? ViewController_Status {
-            self.view.window?.contentViewController = svc
+            self.view.window?.contentViewController = statusVC
         }
     }
     
@@ -39,6 +39,7 @@ extension ViewController_Settings {
         let identifier = NSStoryboard.SceneIdentifier(
             rawValue: "ViewController_Settings"
         )
+        
         guard let viewcontroller = storyboard.instantiateController(
             withIdentifier: identifier
             ) as? ViewController_Settings else {

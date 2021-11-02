@@ -23,10 +23,10 @@ class ViewController_Status: NSViewController {
     @IBAction func changeView_statusToSettings(_ sender: NSButton) {
         // NSApplication.shared.terminate(sender)
         // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
-        if let sevc = self.storyboard?.instantiateController(
+        if let settingVC = self.storyboard?.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Settings")
         ) as? ViewController_Settings {
-            self.view.window?.contentViewController = sevc
+            self.view.window?.contentViewController = settingVC
         }
     }
     
@@ -60,8 +60,22 @@ class ViewController_Status: NSViewController {
         view_app.stringValue = "\(RAM.app)"
         view_wired.stringValue = "\(RAM.wired)"
         view_compressor.stringValue = "\(RAM.compressor)"
+        
+        view_percentFI.stringValue = "\(RAM.display["FI"]!)%"
+        view_percentWA.stringValue = "\(RAM.display["WA"]!)%"
+        /*
         view_percentFI.stringValue = "\(RAM.percentFI)%"
         view_percentWA.stringValue = "\(RAM.percentWA)%"
+        */
+        
+        view_total.textColor = NSColor.systemGreen
+        view_free.textColor = NSColor.systemGreen
+        view_used.textColor = NSColor.systemGreen
+        view_app.textColor = NSColor.systemGreen
+        view_wired.textColor = NSColor.systemGreen
+        view_compressor.textColor = NSColor.systemGreen
+        view_percentFI.textColor = NSColor.systemGreen
+        view_percentWA.textColor = NSColor.systemGreen
     }
     
     
@@ -72,8 +86,23 @@ class ViewController_Status: NSViewController {
         view_app.stringValue = "\(RAM.app)"
         view_wired.stringValue = "\(RAM.wired)"
         view_compressor.stringValue = "\(RAM.compressor)"
+        
+        view_percentFI.stringValue = "\(RAM.display["FI"]!)%"
+        view_percentWA.stringValue = "\(RAM.display["WA"]!)%"
+        
+        /*
         view_percentFI.stringValue = "\(RAM.percentFI)%"
         view_percentWA.stringValue = "\(RAM.percentWA)%"
+        */
+        
+        view_total.textColor = NSColor.systemGreen
+        view_free.textColor = NSColor.systemGreen
+        view_used.textColor = NSColor.systemGreen
+        view_app.textColor = NSColor.systemGreen
+        view_wired.textColor = NSColor.systemGreen
+        view_compressor.textColor = NSColor.systemGreen
+        view_percentFI.textColor = NSColor.systemGreen
+        view_percentWA.textColor = NSColor.systemGreen
     }
 }
 
@@ -81,18 +110,15 @@ class ViewController_Status: NSViewController {
 extension ViewController_Status {
     /*  Storyboard instantiation.  */
     static func freshController() -> ViewController_Status {
-        // (1)
         let storyboard = NSStoryboard(
             name: NSStoryboard.Name(rawValue: "Main"),
             bundle: nil
         )
         
-        // (2)
         let identifier = NSStoryboard.SceneIdentifier(
             rawValue: "ViewController_Status"
         )
         
-        // (3)
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier)
             as? ViewController_Status else {
                 fatalError("Whatever")

@@ -16,7 +16,7 @@
 		1FF110FD272A1621000E4AED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF110FC272A1621000E4AED /* ViewController.swift */; };
 		1FF110FF272A1621000E4AED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF110FE272A1621000E4AED /* Assets.xcassets */; };
 		1FF11102272A1621000E4AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF11100272A1621000E4AED /* Main.storyboard */; };
-		1FF1110B272A2126000E4AED /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1110A272A2126000E4AED /* StatusViewController.swift */; };
+		1FF1110B272A2126000E4AED /* ViewController_Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1110A272A2126000E4AED /* ViewController_Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		1FF11101272A1621000E4AED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FF11103272A1621000E4AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FF11104272A1621000E4AED /* Status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Status.entitlements; sourceTree = "<group>"; };
-		1FF1110A272A2126000E4AED /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		1FF1110A272A2126000E4AED /* ViewController_Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 				1FF110FA272A1621000E4AED /* AppDelegate.swift */,
 				1F229BFC272B6B33000BC688 /* globals.swift */,
 				1F554075272B5F8E00545468 /* RAM.swift */,
-				1FF1110A272A2126000E4AED /* StatusViewController.swift */,
+				1FF1110A272A2126000E4AED /* ViewController_Status.swift */,
 				1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */,
 				1FF110FC272A1621000E4AED /* ViewController.swift */,
 				1F0CE7BA272C1003001D9B8F /* vm_stat.swift */,
@@ -157,7 +157,7 @@
 				1F554076272B5F8E00545468 /* RAM.swift in Sources */,
 				1FF110FD272A1621000E4AED /* ViewController.swift in Sources */,
 				1FB80C4E272C62EF00292114 /* EventMonitor.swift in Sources */,
-				1FF1110B272A2126000E4AED /* StatusViewController.swift in Sources */,
+				1FF1110B272A2126000E4AED /* ViewController_Status.swift in Sources */,
 				1FF110FB272A1621000E4AED /* AppDelegate.swift in Sources */,
 				1FAFBCA827309F7C007D0E11 /* ViewController_Settings.swift in Sources */,
 			);

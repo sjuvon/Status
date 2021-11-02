@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 $ NSApplication.shared.windows.last!.close()
         */
         menuBarIconSetter()
-        popover.contentViewController = StatusViewController.freshController()
+        popover.contentViewController = ViewController_Status.freshController()
         vm_Timer()
         
         eventMonitor = EventMonitor( mask: [.leftMouseDown, .rightMouseDown] ) {

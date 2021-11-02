@@ -12,8 +12,8 @@ class ViewController_Settings: NSViewController {
 
     @IBAction func changeView_settingsToStatus(_ sender: NSButton) {
         if let svc = self.storyboard?.instantiateController(
-            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "StatusViewController")
-            ) as? StatusViewController {
+            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Status")
+            ) as? ViewController_Status {
             self.view.window?.contentViewController = svc
         }
     }

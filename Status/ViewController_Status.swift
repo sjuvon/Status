@@ -9,7 +9,7 @@
 import Cocoa
 
 
-class StatusViewController: NSViewController {
+class ViewController_Status: NSViewController {
     
     @IBOutlet var view_total: NSTextField!
     @IBOutlet var view_used: NSTextField!
@@ -78,9 +78,9 @@ class StatusViewController: NSViewController {
 }
 
 
-extension StatusViewController {
+extension ViewController_Status {
     /*  Storyboard instantiation.  */
-    static func freshController() -> StatusViewController {
+    static func freshController() -> ViewController_Status {
         // (1)
         let storyboard = NSStoryboard(
             name: NSStoryboard.Name(rawValue: "Main"),
@@ -89,12 +89,12 @@ extension StatusViewController {
         
         // (2)
         let identifier = NSStoryboard.SceneIdentifier(
-            rawValue: "StatusViewController"
+            rawValue: "ViewController_Status"
         )
         
         // (3)
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier)
-            as? StatusViewController else {
+            as? ViewController_Status else {
                 fatalError("Whatever")
         }
         

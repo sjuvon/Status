@@ -1011,6 +1011,25 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EME-s6-zhT">
+                                <rect key="frame" x="302" y="233" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarTextJustifiedAlignTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WV8-Ro-Kqb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button identifier="Settings" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fw1-KK-8gz">
+                                <rect key="frame" x="334" y="241" width="17" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSSmartBadgeTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="cdq-86-vSe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeView_statusToSettings:" target="XfG-lQ-9wD" id="3ip-EX-Cq6"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -1028,5 +1047,47 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
+        <!--View Controller Settings-->
+        <scene sceneID="RXl-wm-DL4">
+            <objects>
+                <viewController storyboardIdentifier="ViewController_Settings" id="tp6-tB-7pb" customClass="ViewController_Settings" customModule="Status" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="91A-fc-l8g">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cpr-MK-W3e">
+                                <rect key="frame" x="147" y="117" width="66" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Usv-ql-aEB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="quitApp:" target="tp6-tB-7pb" id="NPk-SK-dbt"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-Fg-YAT">
+                                <rect key="frame" x="20" y="230" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoBackTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Kdy-Ck-Xyo">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeView_settingsToStatus:" target="tp6-tB-7pb" id="w5q-lH-YI0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="aGm-B3-ejN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="1049"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="NSGoBackTemplate" width="9" height="12"/>
+        <image name="NSSmartBadgeTemplate" width="14" height="14"/>
+        <image name="NSTouchBarTextJustifiedAlignTemplate" width="14" height="30"/>
+    </resources>
 </document>

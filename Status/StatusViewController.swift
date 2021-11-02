@@ -20,14 +20,27 @@ class StatusViewController: NSViewController {
     @IBOutlet var view_percentFI: NSTextField!
     @IBOutlet var view_percentWA: NSTextField!
     
+    @IBAction func changeView_statusToSettings(_ sender: NSButton) {
+        // NSApplication.shared.terminate(sender)
+        // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
+        if let myViewController = self.storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Settings")) as? ViewController_Settings {
+            self.view.window?.contentViewController = myViewController
+        }
+        
+    }
     
     var RAM = globalVariables.globalRAM
+    
     
     override func viewDidLoad() {
         /*  View setup  */
         super.viewDidLoad()
         
         status_initial()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
         
         NotificationCenter.default.addObserver(
             self,
@@ -35,6 +48,7 @@ class StatusViewController: NSViewController {
             name: Notification.Name("NewFunctionName"),
             object: nil
         )
+        
     }
     
     
@@ -86,5 +100,6 @@ extension StatusViewController {
         return viewcontroller
     }
 }
+
 
 

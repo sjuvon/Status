@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let vm_statsTimer = Timer.scheduledTimer(
             timeInterval: 2.0,
             target: self,
-            selector: #selector(refresher),
+            selector: #selector(app_refresher),
             userInfo: nil,
             repeats: true
         )
@@ -62,7 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    @objc func refresher() {
+    @objc func app_refresher() {
         /*  To update the state of the app.  */
         RAM.update()
         menuBarIconSetter()
@@ -98,7 +98,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             popover.show(
                 relativeTo: button.bounds,
                 of: button,
-                preferredEdge: NSRectEdge.minY
+                preferredEdge: NSRectEdge.maxX
             )
         }
         eventMonitor?.start()

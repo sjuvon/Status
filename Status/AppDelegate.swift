@@ -74,12 +74,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
     }
     
+    class jimBlock: NSTextBlock {
+        override init() {
+            super.init()
+            self.setValue(1, type: .percentageValueType, for: .width)
+            //self.setContentWidth(1.0, type: .absoluteValueType)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    }
+    
     
     @objc func menuBarIconSetter() {
         /*  To set the app's menu bar icon.  */
         if let button = menuBarItem.button {
             let paragraph = NSMutableParagraphStyle()
             paragraph.alignment = .left
+            // paragraph.textBlocks = NSTextBlock.setValue(50, type: .percentageValueType, for: .width)
+            
+            let jimmy = jimBlock()
+            paragraph.textBlocks = [jimmy]
+            
+            
             let titleAligned =  NSAttributedString(
                 string: "RAM: \(RAM.display["compressed"]!)%",
                 attributes: [

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+// from globals import GlobalVariables
 
 
 class ViewController_Status: NSViewController {
@@ -19,11 +20,11 @@ class ViewController_Status: NSViewController {
     @IBOutlet var view_compressor: NSTextField!
     @IBOutlet var view_percentFI: NSTextField!
     @IBOutlet var view_percentWA: NSTextField!
-    
-    
+
     @IBAction func changeView_statusToList(_ sender: NSButton) {
-        // NSApplication.shared.terminate(sender)
-        // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
+        /*  Credit: Mark from
+            https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window
+        */
         if let settingVC = self.storyboard?.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_List")
             ) as? ViewController_List {
@@ -32,16 +33,12 @@ class ViewController_Status: NSViewController {
     }
     
     @IBAction func changeView_statusToSettings(_ sender: NSButton) {
-        // NSApplication.shared.terminate(sender)
-        // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
         if let settingVC = self.storyboard?.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Settings")
         ) as? ViewController_Settings {
             self.view.window?.contentViewController = settingVC
         }
     }
-    
-    var RAM = globalVariables.globalRAM
     
     
     override func viewDidLoad() {
@@ -58,26 +55,22 @@ class ViewController_Status: NSViewController {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(status_updated),
-            name: Notification.Name("NewFunctionName"),
+            name: Notification.Name("App Refresh"),
             object: nil
         )
     }
     
     
     func status_initial() -> Void {
-        view_total.stringValue = "\(RAM.total)"
-        view_free.stringValue = "\(RAM.free)"
-        view_used.stringValue = "\(RAM.used)"
-        view_app.stringValue = "\(RAM.app)"
-        view_wired.stringValue = "\(RAM.wired)"
-        view_compressor.stringValue = "\(RAM.compressor)"
+        view_total.stringValue = "\(GlobalVariables.globalRAM.display["total"]!)"
+        view_free.stringValue = "\(GlobalVariables.globalRAM.display["free"]!)"
+        view_used.stringValue = "\(GlobalVariables.globalRAM.display["used"]!)"
+        view_app.stringValue = "\(GlobalVariables.globalRAM.display["app"]!)"
+        view_wired.stringValue = "\(GlobalVariables.globalRAM.display["wired"]!)"
+        view_compressor.stringValue = "\(GlobalVariables.globalRAM.display["compressor"]!)"
         
-        view_percentFI.stringValue = "\(RAM.display["FI"]!)%"
-        view_percentWA.stringValue = "\(RAM.display["WA"]!)%"
-        /*
-        view_percentFI.stringValue = "\(RAM.percentFI)%"
-        view_percentWA.stringValue = "\(RAM.percentWA)%"
-        */
+        view_percentFI.stringValue = "\(GlobalVariables.globalRAM.display["percentFI"]!)%"
+        view_percentWA.stringValue = "\(GlobalVariables.globalRAM.display["percentWA"]!)%"
         
         view_total.textColor = NSColor.systemGreen
         view_free.textColor = NSColor.systemGreen
@@ -91,21 +84,16 @@ class ViewController_Status: NSViewController {
     
     
     @objc func status_updated(_ notification: NSNotification) -> Void {
-        view_total.stringValue = "\(RAM.total)"
-        view_free.stringValue = "\(RAM.free)"
-        view_used.stringValue = "\(RAM.used)"
-        view_app.stringValue = "\(RAM.app)"
-        view_wired.stringValue = "\(RAM.wired)"
-        view_compressor.stringValue = "\(RAM.compressor)"
+        view_total.stringValue = "\(GlobalVariables.globalRAM.display["total"]!)"
+        view_free.stringValue = "\(GlobalVariables.globalRAM.display["free"]!)"
+        view_used.stringValue = "\(GlobalVariables.globalRAM.display["used"]!)"
+        view_app.stringValue = "\(GlobalVariables.globalRAM.display["app"]!)"
+        view_wired.stringValue = "\(GlobalVariables.globalRAM.display["wired"]!)"
+        view_compressor.stringValue = "\(GlobalVariables.globalRAM.display["compressor"]!)"
         
-        view_percentFI.stringValue = "\(RAM.display["FI"]!)%"
-        view_percentWA.stringValue = "\(RAM.display["WA"]!)%"
-        
-        /*
-        view_percentFI.stringValue = "\(RAM.percentFI)%"
-        view_percentWA.stringValue = "\(RAM.percentWA)%"
-        */
-        
+        view_percentFI.stringValue = "\(GlobalVariables.globalRAM.display["percentFI"]!)%"
+        view_percentWA.stringValue = "\(GlobalVariables.globalRAM.display["percentWA"]!)%"
+
         view_total.textColor = NSColor.systemGreen
         view_free.textColor = NSColor.systemGreen
         view_used.textColor = NSColor.systemGreen

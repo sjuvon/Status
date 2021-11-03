@@ -7,33 +7,23 @@
 //
 
 import Cocoa
+/*  from EventMonitor import EventMonitor
+    from globals import GlobalVariables
+    from View_MenuBar import menuBar
+*/
 
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var RAM = globalVariables.globalRAM
-    let menuBarItem = NSStatusBar.system.statusItem( withLength: 110 )
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        /*  Initialise app.
         
-        Out of the box, the app will initialise with a window and dock icon.  To remove:
-        1)  Add the following to Info.plist:
-                <key>LSUIElement</key>
-                <string>true</string>
-            This takes care of the dock icon.
-        2)  If using Storyboards, delete Window Controller to remove the initialising window.
-            Question: How do we do this without Storyboards?  Figure this out.
-            E.g., An ad-hoc solution:
-                $ NSApplication.shared.windows.last!.close()
-        */
-        
-        menuBarIconSetter()
         popover.contentViewController = ViewController_Status.freshController()
+        app_refresher()
         vm_Timer()
         
         eventMonitor = EventMonitor( mask: [.leftMouseDown, .rightMouseDown] ) {
@@ -47,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func vm_Timer() {
-        /*  Main function: Timer for updating state of app.  */
+        /*  Timer for updating state of app.  */
         let vm_statsTimer = Timer.scheduledTimer(
             timeInterval: 2.0,
             target: self,
@@ -65,66 +55,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func app_refresher() {
         /*  To update the state of the app.  */
-        RAM.update()
-        menuBarIconSetter()
+        GlobalVariables.globalRAM = RAM()
+        MenuBar()
         
         NotificationCenter.default.post(
-            name: Notification.Name("NewFunctionName"),
+            name: Notification.Name("App Refresh"),
             object: nil
         )
     }
     
-    class jimBlock: NSTextBlock {
-        override init() {
-            super.init()
-            self.setValue(1, type: .percentageValueType, for: .width)
-            //self.setContentWidth(1.0, type: .absoluteValueType)
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-    
-    
-    @objc func menuBarIconSetter() {
-        /*  To set the app's menu bar icon.  */
-        if let button = menuBarItem.button {
-            let paragraph = NSMutableParagraphStyle()
-            paragraph.alignment = .left
-            // paragraph.textBlocks = NSTextBlock.setValue(50, type: .percentageValueType, for: .width)
-            
-            let jimmy = jimBlock()
-            paragraph.textBlocks = [jimmy]
-            
-            
-            let titleAligned =  NSAttributedString(
-                string: "RAM: \(RAM.display["compressed"]!)%",
-                attributes: [
-                    NSAttributedStringKey.paragraphStyle: paragraph,
-                    NSAttributedStringKey.foregroundColor: NSColor.systemGreen,
-                    NSAttributedStringKey.font: NSFont.systemFont(ofSize: 14)
-                ]
-            )
-            
-            button.attributedTitle = titleAligned
-            button.action = #selector(togglePopover(_:))
-            // button.imagePosition = NSControl.ImagePosition.imageRight
-            // button.font = NSFont(name: "typeFace", size: 14)
-            /*
-            button.frame = CGRect(
-                x: -10.0,
-                y: 0.5,
-                width: button.frame.width,
-                height: button.frame.height
-            )
-            */
-        }
-    }
-    
 
     @objc func togglePopover(_ sender: Any?) {
-        /* Toggle the popover */
+        /* Toggle the popover. */
         if popover.isShown {
             closePopover(sender: sender)
         } else {
@@ -134,8 +76,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func showPopover(sender: Any?) {
-        /* Show the popover */
-        if let button = menuBarItem.button {
+        /* Show the popover. */
+        if let button = MenuBar.icon.button {
             popover.show(
                 relativeTo: button.bounds,
                 of: button,
@@ -147,7 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func closePopover(sender: Any?) {
-        /* Close the popover */
+        /* Close the popover. */
         popover.performClose(sender)
         eventMonitor?.stop()
     }

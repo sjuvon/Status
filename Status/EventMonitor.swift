@@ -19,9 +19,11 @@ public class EventMonitor {
         self.handler = handler
     }
     
+    
     deinit {
         stop()
     }
+    
     
     public func start() {
         monitor = NSEvent.addGlobalMonitorForEvents(
@@ -29,6 +31,7 @@ public class EventMonitor {
             handler: handler
         )
     }
+
     
     public func stop() {
         if monitor != nil {
@@ -36,4 +39,6 @@ public class EventMonitor {
             monitor = nil
         }
     }
+    
+    
 }

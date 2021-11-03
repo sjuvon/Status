@@ -7,9 +7,10 @@
 //
 
 import Foundation
+// from RAM import RAM
 
 
-struct globalVariables {
+struct GlobalVariables {
     static var globalRAM = RAM()
 }
 

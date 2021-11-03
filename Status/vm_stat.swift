@@ -54,16 +54,13 @@ func vm_stat() -> vm_statistics64? {
             HOST_VM_INFO64,
             $0,
             &host_size
-        )
+            )
     }
     
-    
-    /*  As of now, this code doesn't return nil-optional.
-        Will update code eventually to utilise this (i.e., KERN_SUCCESS with host_statistics64).
-    */
     return pointer_vm_stat.pointee
 }
-    
+
+
     /*  // Alternative solution via bindMemory:
         // In general, use bindMemory when:
         // (1) We want the pointer to be converted permanently, and
@@ -85,38 +82,7 @@ func vm_stat() -> vm_statistics64? {
     */
 
 
-
 /*
-func vm_stat() -> vm_statistics64? {
-    let host_port: host_t = mach_host_self()
-    var host_size: mach_msg_type_number_t = mach_msg_type_number_t(
-        MemoryLayout<vm_statistics64_data_t>.stride / MemoryLayout<integer_t>.stride
-    )
-    
-    
-    var vm_stat: vm_statistics64 = vm_statistics64()
-    let pointer_vm_stat = UnsafeMutablePointer<vm_statistics64>.allocate(capacity: 1)
-    
-    pointer_vm_stat.initialize(
-        from: &vm_stat,
-        count: 1
-    )
-    
-    
-    pointer_vm_stat.withMemoryRebound(to: integer_t.self, capacity: 1) {
-        host_statistics64(
-            host_port,
-            HOST_VM_INFO64,
-            $0,
-            &host_size
-        )
-    }
- 
-    return pointer_vm_stat.pointee
-}
-*/
-
-
 func vm_list() -> task_basic_info_64 {
     var targetTask: task_t = mach_task_self_
     var taskInfoCount: mach_msg_type_number_t = mach_msg_type_number_t(
@@ -145,7 +111,26 @@ func vm_list() -> task_basic_info_64 {
  
     return pointer_vm_list.pointee
 }
+*/
 
+
+/*
+@discardableResult
+func shell() -> String {
+    let task = Process()
+    let pipe = Pipe()
+    
+    task.standardOutput = pipe
+    task.launchPath = "/bin/sh"
+    task.arguments = ["-c", String(format:"%@", "top -o mem")]
+    task.launch()
+    
+    let data = pipe.fileHandleForReading.readDataToEndOfFile()
+    let output = String(data: data, encoding: .utf8)!
+    
+    return output
+}
+ */
 
 
 

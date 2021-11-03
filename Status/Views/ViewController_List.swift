@@ -7,14 +7,14 @@
 //
 
 import Cocoa
+// from globals import GlobalVariables
+
 
 class ViewController_List: NSViewController {
     
     @IBOutlet var view_list: NSTextField!
-    
+
     @IBAction func changeView_listToStatus(_ sender: NSButton) {
-        // NSApplication.shared.terminate(sender)
-        // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
         if let statusVC2 = self.storyboard?.instantiateController(
             withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Status")
             ) as? ViewController_Status {
@@ -22,13 +22,12 @@ class ViewController_List: NSViewController {
         }
     }
 
-    var RAM = globalVariables.globalRAM
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // view_list.stringValue = RAM.listy
-        print(RAM.listy.virtual_size)
+        // print(RAM.listy)
     }
     
 }

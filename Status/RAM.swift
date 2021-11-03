@@ -96,7 +96,7 @@ public class RAM {
     
     
     public func update() {
-        /*  :(  */
+        // :(
         let vm = vm_stat()!
         
         let temp_free: Double = Double(vm.free_count)*self.factor
@@ -131,5 +131,6 @@ public class RAM {
     
     
 }
+
 
 

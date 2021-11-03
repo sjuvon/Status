@@ -26,7 +26,7 @@ func vm_stat() -> vm_statistics64? {
     /*  host_port: The port number of host (me)
         host_size: Size in integer_t's of vm_statistics64, in preparation for pointer conversion.
     */
-    let host_port: mach_port_t = mach_host_self()
+    let host_port: host_t = mach_host_self()
     var host_size: mach_msg_type_number_t = mach_msg_type_number_t(
         MemoryLayout<vm_statistics64_data_t>.stride / MemoryLayout<integer_t>.stride
     )
@@ -62,7 +62,7 @@ func vm_stat() -> vm_statistics64? {
         Will update code eventually to utilise this (i.e., KERN_SUCCESS with host_statistics64).
     */
     return pointer_vm_stat.pointee
-    
+}
     
     /*  // Alternative solution via bindMemory:
         // In general, use bindMemory when:
@@ -83,8 +83,67 @@ func vm_stat() -> vm_statistics64? {
     
     return pointer_vm_stat.pointee
     */
+
+
+
+/*
+func vm_stat() -> vm_statistics64? {
+    let host_port: host_t = mach_host_self()
+    var host_size: mach_msg_type_number_t = mach_msg_type_number_t(
+        MemoryLayout<vm_statistics64_data_t>.stride / MemoryLayout<integer_t>.stride
+    )
     
+    
+    var vm_stat: vm_statistics64 = vm_statistics64()
+    let pointer_vm_stat = UnsafeMutablePointer<vm_statistics64>.allocate(capacity: 1)
+    
+    pointer_vm_stat.initialize(
+        from: &vm_stat,
+        count: 1
+    )
+    
+    
+    pointer_vm_stat.withMemoryRebound(to: integer_t.self, capacity: 1) {
+        host_statistics64(
+            host_port,
+            HOST_VM_INFO64,
+            $0,
+            &host_size
+        )
+    }
+ 
+    return pointer_vm_stat.pointee
 }
+*/
+
+
+func vm_list() -> task_basic_info_64 {
+    var targetTask: task_t = mach_task_self_
+    var taskInfoCount: mach_msg_type_number_t = mach_msg_type_number_t(
+        MemoryLayout<task_basic_info_64_data_t>.stride / MemoryLayout<integer_t>.stride
+    )
+    
+    var vm_list: task_basic_info_64 = task_basic_info_64()
+    let pointer_vm_list = UnsafeMutablePointer<task_basic_info_64>.allocate(capacity: 1)
+    
+    pointer_vm_list.initialize(
+        from: &vm_list,
+        count: 1
+    )
+    
+    pointer_vm_list.withMemoryRebound(to: integer_t.self, capacity: 1) {
+        task_info(
+            targetTask,
+            task_flavor_t(TASK_BASIC_INFO_64),
+            $0,
+            &taskInfoCount
+        )
+    }
+    
+ 
+    return pointer_vm_list.pointee
+}
+
 
 
 

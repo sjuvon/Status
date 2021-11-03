@@ -20,6 +20,17 @@ class ViewController_Status: NSViewController {
     @IBOutlet var view_percentFI: NSTextField!
     @IBOutlet var view_percentWA: NSTextField!
     
+    
+    @IBAction func changeView_statusToList(_ sender: NSButton) {
+        // NSApplication.shared.terminate(sender)
+        // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !
+        if let settingVC = self.storyboard?.instantiateController(
+            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_List")
+            ) as? ViewController_List {
+            self.view.window?.contentViewController = settingVC
+        }
+    }
+    
     @IBAction func changeView_statusToSettings(_ sender: NSButton) {
         // NSApplication.shared.terminate(sender)
         // omg thank you, Mark, from https://stackoverflow.com/questions/28139294/how-does-one-display-a-new-view-controller-in-the-same-mac-window !

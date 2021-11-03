@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F0CE7BB272C1004001D9B8F /* vm_stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CE7BA272C1003001D9B8F /* vm_stat.swift */; };
+		1F14C49A2732B428005A6B9C /* ViewController_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14C4992732B428005A6B9C /* ViewController_List.swift */; };
 		1F229BFD272B6B33000BC688 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F229BFC272B6B33000BC688 /* globals.swift */; };
 		1F554076272B5F8E00545468 /* RAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F554075272B5F8E00545468 /* RAM.swift */; };
 		1FAFBCA827309F7C007D0E11 /* ViewController_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1F0CE7BA272C1003001D9B8F /* vm_stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vm_stat.swift; sourceTree = "<group>"; };
+		1F14C4992732B428005A6B9C /* ViewController_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_List.swift; sourceTree = "<group>"; };
 		1F229BFC272B6B33000BC688 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
 		1F554075272B5F8E00545468 /* RAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAM.swift; sourceTree = "<group>"; };
 		1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Settings.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				1F554075272B5F8E00545468 /* RAM.swift */,
 				1FF1110A272A2126000E4AED /* ViewController_Status.swift */,
 				1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */,
+				1F14C4992732B428005A6B9C /* ViewController_List.swift */,
 				1F0CE7BA272C1003001D9B8F /* vm_stat.swift */,
 				1FB80C4D272C62EF00292114 /* EventMonitor.swift */,
 				1FF110FE272A1621000E4AED /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 				1FB80C4E272C62EF00292114 /* EventMonitor.swift in Sources */,
 				1FF1110B272A2126000E4AED /* ViewController_Status.swift in Sources */,
 				1FF110FB272A1621000E4AED /* AppDelegate.swift in Sources */,
+				1F14C49A2732B428005A6B9C /* ViewController_List.swift in Sources */,
 				1FAFBCA827309F7C007D0E11 /* ViewController_Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

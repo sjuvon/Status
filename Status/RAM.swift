@@ -30,6 +30,7 @@ public class RAM {
     */
     let factor: Double = Double( Double(4096) / Double(1024*1024*1024) )
     var display: [String:Double] = [:]
+    var listy: task_basic_info_64
     
     var free: Double
     var speculative: Double
@@ -54,6 +55,9 @@ public class RAM {
     
     public init() {
         let vm = vm_stat()!
+        let vmList = vm_list()
+        self.listy = vmList
+        
         
         let temp_free: Double = Double(vm.free_count)*self.factor
         let temp_speculative: Double = Double(vm.speculative_count)*self.factor
@@ -98,6 +102,8 @@ public class RAM {
     public func update() {
         // :(
         let vm = vm_stat()!
+        let vmList = vm_list()
+        self.listy = vmList
         
         let temp_free: Double = Double(vm.free_count)*self.factor
         let temp_speculative: Double = Double(vm.speculative_count)*self.factor

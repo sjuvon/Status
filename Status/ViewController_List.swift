@@ -22,11 +22,13 @@ class ViewController_List: NSViewController {
         }
     }
 
-    
+    var RAM = globalVariables.globalRAM
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        // view_list.stringValue = RAM.listy
+        print(RAM.listy.virtual_size)
     }
     
 }

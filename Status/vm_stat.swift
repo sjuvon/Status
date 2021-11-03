@@ -131,6 +131,8 @@ func vm_list() -> task_basic_info_64 {
         count: 1
     )
     
+    
+    // Thank you, Nate Cook, at https://stackoverflow.com/questions/27556807/swift-pointer-problems-with-mach-task-basic-info !
     pointer_vm_list.withMemoryRebound(to: integer_t.self, capacity: 1) {
         task_info(
             targetTask,

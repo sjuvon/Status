@@ -18,8 +18,7 @@ class ViewController_Status: NSViewController {
     @IBOutlet var view_app: NSTextField!
     @IBOutlet var view_wired: NSTextField!
     @IBOutlet var view_compressor: NSTextField!
-    @IBOutlet var view_percentFI: NSTextField!
-    @IBOutlet var view_percentWA: NSTextField!
+    @IBOutlet var view_swap: NSTextField!
 
     @IBAction func changeView_statusToList(_ sender: NSButton) {
         /*  Credit: Mark from
@@ -42,7 +41,7 @@ class ViewController_Status: NSViewController {
     
     
     override func viewDidLoad() {
-        /*  View setup  */
+        /*  View: Did Load  */
         super.viewDidLoad()
         
         status_initial()
@@ -50,6 +49,7 @@ class ViewController_Status: NSViewController {
     
     
     override func viewDidAppear() {
+        /*  View: Did Appear  */
         super.viewDidAppear()
         
         NotificationCenter.default.addObserver(
@@ -68,9 +68,7 @@ class ViewController_Status: NSViewController {
         view_app.stringValue = "\(GlobalVariables.globalRAM.display["app"]!)"
         view_wired.stringValue = "\(GlobalVariables.globalRAM.display["wired"]!)"
         view_compressor.stringValue = "\(GlobalVariables.globalRAM.display["compressor"]!)"
-        
-        view_percentFI.stringValue = "\(GlobalVariables.globalRAM.display["percentFI"]!)%"
-        view_percentWA.stringValue = "\(GlobalVariables.globalRAM.display["percentWA"]!)%"
+        view_swap.stringValue = "\(GlobalVariables.globalRAM.display["swap"]!)"
         
         view_total.textColor = NSColor.systemGreen
         view_free.textColor = NSColor.systemGreen
@@ -78,8 +76,7 @@ class ViewController_Status: NSViewController {
         view_app.textColor = NSColor.systemGreen
         view_wired.textColor = NSColor.systemGreen
         view_compressor.textColor = NSColor.systemGreen
-        view_percentFI.textColor = NSColor.systemGreen
-        view_percentWA.textColor = NSColor.systemGreen
+        view_swap.textColor = NSColor.systemGreen
     }
     
     
@@ -90,18 +87,15 @@ class ViewController_Status: NSViewController {
         view_app.stringValue = "\(GlobalVariables.globalRAM.display["app"]!)"
         view_wired.stringValue = "\(GlobalVariables.globalRAM.display["wired"]!)"
         view_compressor.stringValue = "\(GlobalVariables.globalRAM.display["compressor"]!)"
+        view_swap.stringValue = "\(GlobalVariables.globalRAM.display["swap"]!)"
         
-        view_percentFI.stringValue = "\(GlobalVariables.globalRAM.display["percentFI"]!)%"
-        view_percentWA.stringValue = "\(GlobalVariables.globalRAM.display["percentWA"]!)%"
-
         view_total.textColor = NSColor.systemGreen
         view_free.textColor = NSColor.systemGreen
         view_used.textColor = NSColor.systemGreen
         view_app.textColor = NSColor.systemGreen
         view_wired.textColor = NSColor.systemGreen
         view_compressor.textColor = NSColor.systemGreen
-        view_percentFI.textColor = NSColor.systemGreen
-        view_percentWA.textColor = NSColor.systemGreen
+        view_swap.textColor = NSColor.systemGreen
     }
 }
 

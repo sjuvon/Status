@@ -27,13 +27,13 @@ struct MenuBarLeft {
 
 struct MenuBarRight {
     /*  ...But this works :\  */
-    static var iconRight = NSStatusBar.system.statusItem( withLength: 60 )
+    static var iconRight = NSStatusBar.system.statusItem( withLength: 73 )
     static var display: String = "used"
     
     public init() {
         if let button = MenuBarRight.iconRight.button {
             let titleAttributed = NSAttributedString(
-                string: "\(GlobalVariables.globalRAM.display[MenuBarRight.display]!)%",
+                string: "\(GlobalVariables.globalRAM.display[MenuBarRight.display]!) GB",
                 attributes: [
                     NSAttributedStringKey.foregroundColor: NSColor.systemGreen,
                     NSAttributedStringKey.font: NSFont.systemFont(ofSize: 14)

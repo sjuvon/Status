@@ -45,6 +45,17 @@ func vm_stat() -> vm_statistics64? {
 }
 
 
+func swap_usage() -> xsw_usage? {
+    /*  Kernel API call to retrieve memory swap usage.  */
+    var sizeT: size_t = MemoryLayout<xsw_usage>.stride
+    var swapUsage: xsw_usage = xsw_usage()
+    
+    sysctlbyname("vm.swapusage", &swapUsage, &sizeT, nil, 0)
+    
+    return swapUsage
+}
+
+
 public struct RAM {
     /*  Model for RAM statistics */
     let factor: Double = Double( Double(4096) / Double(1024*1024*1024) )
@@ -53,6 +64,7 @@ public struct RAM {
     
     public init() {
         let vm = vm_stat()!
+        let swap = swap_usage()!
         
         let temp_free: Double = Double(vm.free_count)*factor
         let temp_speculative: Double = Double(vm.speculative_count)*factor
@@ -66,6 +78,9 @@ public struct RAM {
         let temp_total: Double = temp_free + temp_speculative + temp_active + temp_inactive + temp_wired + temp_compressor
         let temp_used: Double = temp_app + temp_wired + temp_compressor
         
+        let temp_swap: Double = Double(Double(swap.xsu_used)/Double(1024*1024))
+        display["swap"] = rounder(x: temp_swap)
+        
         display["free"] = rounder(x: temp_free)
         display["speculative"] = rounder(x: temp_speculative)
         display["active"] = rounder(x: temp_active)
@@ -77,12 +92,6 @@ public struct RAM {
         display["app"] = rounder(x: temp_app)
         display["total"] = rounder(x: temp_total)
         display["used"] = rounder(x: temp_used)
-        
-        display["percentUsed"] = rounder(x: (temp_used/temp_total)*100)
-        display["percentFree"] = rounder(x: (temp_free/temp_total)*100)
-        display["percentCompressed"] = rounder(x: 100 - ((temp_compressor/temp_total)*100))
-        display["percentFI"] = rounder(x: ((temp_free + temp_inactive)/temp_total)*100)
-        display["percentWA"] = rounder(x: ((temp_wired + temp_active)/temp_total)*100)
     }
     
     

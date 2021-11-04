@@ -11,46 +11,39 @@ import Foundation
 // from globals import GlobalVariables
 
 
-struct MenuBar {
-    static var icon = NSStatusBar.system.statusItem( withLength: 110 )
+struct MenuBarLeft {
+    /*  Gross... */
+    static let iconLeft = NSStatusBar.system.statusItem( withLength: NSStatusItem.variableLength )
+    
+    public init() {
+        if let butty = MenuBarLeft.iconLeft.button {
+            butty.title = "RAM:"
+            butty.action = #selector(AppDelegate().togglePopover(_:))
+        }
+    }
+    
+}
+
+
+struct MenuBarRight {
+    /*  ...But this works :\  */
+    static var iconRight = NSStatusBar.system.statusItem( withLength: 60 )
     static var display: String = "used"
     
     public init() {
-        class JimBlock: NSTextBlock {
-            override init() {
-                super.init()
-                self.setValue(1, type: .percentageValueType, for: .width)
-                //self.setContentWidth(1.0, type: .absoluteValueType)
-            }
-            
-            required init?(coder aDecoder: NSCoder) {
-                fatalError("init(coder:) has not been implemented")
-            }
-        }
-        
-        if let button = MenuBar.icon.button {
-            let paragraph = NSMutableParagraphStyle()
-            paragraph.alignment = .left
-            // paragraph.textBlocks = NSTextBlock.setValue(50, type: .percentageValueType, for: .width)
-            
-            let jimmy = JimBlock()
-            paragraph.textBlocks = [jimmy]
-            
-            let titleAligned =  NSAttributedString(
-                string: "RAM: \(GlobalVariables.globalRAM.display[MenuBar.display]!)%",
+        if let button = MenuBarRight.iconRight.button {
+            let titleAttributed = NSAttributedString(
+                string: "\(GlobalVariables.globalRAM.display[MenuBarRight.display]!)%",
                 attributes: [
-                    NSAttributedStringKey.paragraphStyle: paragraph,
                     NSAttributedStringKey.foregroundColor: NSColor.systemGreen,
                     NSAttributedStringKey.font: NSFont.systemFont(ofSize: 14)
                 ]
             )
             
-            button.attributedTitle = titleAligned
+            button.attributedTitle = titleAttributed
             button.action = #selector(AppDelegate().togglePopover(_:))
         }
-        
-        
-        
     }
+    
 }
 

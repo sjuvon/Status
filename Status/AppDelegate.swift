@@ -19,7 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         popover.contentViewController = ViewController_Status.freshController()
@@ -56,7 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func app_refresher() {
         /*  To update the state of the app.  */
         GlobalVariables.globalRAM = RAM()
-        MenuBar()
+        MenuBarRight()
+        MenuBarLeft()
         
         NotificationCenter.default.post(
             name: Notification.Name("App Refresh"),
@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showPopover(sender: Any?) {
         /* Show the popover. */
-        if let button = MenuBar.icon.button {
+        if let button = MenuBarRight.iconRight.button {
             popover.show(
                 relativeTo: button.bounds,
                 of: button,

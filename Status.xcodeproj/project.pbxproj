@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0CE7BB272C1004001D9B8F /* vm_stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CE7BA272C1003001D9B8F /* vm_stat.swift */; };
 		1F14C49A2732B428005A6B9C /* ViewController_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14C4992732B428005A6B9C /* ViewController_List.swift */; };
 		1F229BFD272B6B33000BC688 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F229BFC272B6B33000BC688 /* globals.swift */; };
 		1F554076272B5F8E00545468 /* RAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F554075272B5F8E00545468 /* RAM.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F0CE7BA272C1003001D9B8F /* vm_stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vm_stat.swift; sourceTree = "<group>"; };
 		1F14C4992732B428005A6B9C /* ViewController_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_List.swift; sourceTree = "<group>"; };
 		1F229BFC272B6B33000BC688 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
 		1F554075272B5F8E00545468 /* RAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAM.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				1FF110FA272A1621000E4AED /* AppDelegate.swift */,
 				1FB80C4D272C62EF00292114 /* EventMonitor.swift */,
 				1F229BFC272B6B33000BC688 /* globals.swift */,
-				1F0CE7BA272C1003001D9B8F /* vm_stat.swift */,
 				1FF110FE272A1621000E4AED /* Assets.xcassets */,
 				1FF11100272A1621000E4AED /* Main.storyboard */,
 				1FF1CA4C2733214600D46C1A /* Models */,
@@ -176,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F0CE7BB272C1004001D9B8F /* vm_stat.swift in Sources */,
 				1F229BFD272B6B33000BC688 /* globals.swift in Sources */,
 				1FF1CA4E27332B9100D46C1A /* View_MenuBar.swift in Sources */,
 				1F554076272B5F8E00545468 /* RAM.swift in Sources */,

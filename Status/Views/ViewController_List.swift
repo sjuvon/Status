@@ -16,8 +16,8 @@ class ViewController_List: NSViewController {
 
     @IBAction func changeView_listToStatus(_ sender: NSButton) {
         if let statusVC2 = self.storyboard?.instantiateController(
-            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Status")
-            ) as? ViewController_Status {
+                    withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ViewController_Status")
+               ) as? ViewController_Status {
             self.view.window?.contentViewController = statusVC2
         }
     }
@@ -26,8 +26,7 @@ class ViewController_List: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // view_list.stringValue = RAM.listy
-        // print(RAM.listy)
+        // To do: Process list
     }
     
 }

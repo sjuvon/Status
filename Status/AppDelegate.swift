@@ -21,7 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        popover.contentViewController = ViewController_Status.freshController()
+        //popover.contentViewController = ViewController_Status.freshController()
+        //popoverRight.contentViewController = ViewController_Settings.freshController()
         app_refresher()
         vm_Timer()
         
@@ -77,6 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showPopover(sender: Any?) {
         /* Show the popover. */
+        popover.contentViewController = ViewController_Status.freshController()
         if let button = MenuBarRight.iconRight.button {
             popover.show(
                 relativeTo: button.bounds,
@@ -92,6 +94,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         /* Close the popover. */
         popover.performClose(sender)
         eventMonitor?.stop()
+    }
+    
+    
+    
+    
+    // For popoverRight:
+    @objc func togglePopoverRight(_ sender: Any?) {
+        /* Toggle the popoverRight. */
+        if popover.isShown {
+            closePopover(sender: sender)
+        } else {
+            showPopoverRight(sender: sender)
+        }
+    }
+    
+    
+    func showPopoverRight(sender: Any?) {
+        /* Show the popoverRight. */
+        popover.contentViewController = ViewController_Settings.freshController()
+        if let button = MenuBarRight.iconRight.button {
+            popover.show(
+                relativeTo: button.bounds,
+                of: button,
+                preferredEdge: NSRectEdge.maxX
+            )
+        }
+        eventMonitor?.start()
     }
 
 }

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F14C49A2732B428005A6B9C /* ViewController_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14C4992732B428005A6B9C /* ViewController_List.swift */; };
-		1F229BFD272B6B33000BC688 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F229BFC272B6B33000BC688 /* globals.swift */; };
+		1F229BFD272B6B33000BC688 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F229BFC272B6B33000BC688 /* Globals.swift */; };
+		1F302CA2273496990006A1C5 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F302CA1273496990006A1C5 /* Popover.swift */; };
 		1F554076272B5F8E00545468 /* RAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F554075272B5F8E00545468 /* RAM.swift */; };
 		1FAFBCA827309F7C007D0E11 /* ViewController_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */; };
 		1FB80C4E272C62EF00292114 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB80C4D272C62EF00292114 /* EventMonitor.swift */; };
@@ -21,7 +22,8 @@
 
 /* Begin PBXFileReference section */
 		1F14C4992732B428005A6B9C /* ViewController_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_List.swift; sourceTree = "<group>"; };
-		1F229BFC272B6B33000BC688 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
+		1F229BFC272B6B33000BC688 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		1F302CA1273496990006A1C5 /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		1F554075272B5F8E00545468 /* RAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAM.swift; sourceTree = "<group>"; };
 		1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Settings.swift; sourceTree = "<group>"; };
 		1FB80C4D272C62EF00292114 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -69,7 +71,8 @@
 				1FF11103272A1621000E4AED /* Info.plist */,
 				1FF110FA272A1621000E4AED /* AppDelegate.swift */,
 				1FB80C4D272C62EF00292114 /* EventMonitor.swift */,
-				1F229BFC272B6B33000BC688 /* globals.swift */,
+				1F229BFC272B6B33000BC688 /* Globals.swift */,
+				1F302CA1273496990006A1C5 /* Popover.swift */,
 				1FF110FE272A1621000E4AED /* Assets.xcassets */,
 				1FF11100272A1621000E4AED /* Main.storyboard */,
 				1FF1CA4C2733214600D46C1A /* Models */,
@@ -173,7 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F229BFD272B6B33000BC688 /* globals.swift in Sources */,
+				1F229BFD272B6B33000BC688 /* Globals.swift in Sources */,
+				1F302CA2273496990006A1C5 /* Popover.swift in Sources */,
 				1FF1CA4E27332B9100D46C1A /* View_MenuBar.swift in Sources */,
 				1F554076272B5F8E00545468 /* RAM.swift in Sources */,
 				1FB80C4E272C62EF00292114 /* EventMonitor.swift in Sources */,

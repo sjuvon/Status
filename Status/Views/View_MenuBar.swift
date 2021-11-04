@@ -41,7 +41,7 @@ struct MenuBarRight {
             )
             
             button.attributedTitle = titleAttributed
-            button.action = #selector(AppDelegate().togglePopover(_:))
+            button.action = #selector(AppDelegate().togglePopoverRight(_:))
         }
     }
     

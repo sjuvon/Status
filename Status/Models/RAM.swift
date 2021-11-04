@@ -77,9 +77,7 @@ public struct RAM {
         let temp_app: Double = temp_pageable - temp_purgeable
         let temp_total: Double = temp_free + temp_speculative + temp_active + temp_inactive + temp_wired + temp_compressor
         let temp_used: Double = temp_app + temp_wired + temp_compressor
-        
         let temp_swap: Double = Double(Double(swap.xsu_used)/Double(1024*1024))
-        display["swap"] = rounder(x: temp_swap)
         
         display["free"] = rounder(x: temp_free)
         display["speculative"] = rounder(x: temp_speculative)
@@ -92,6 +90,7 @@ public struct RAM {
         display["app"] = rounder(x: temp_app)
         display["total"] = rounder(x: temp_total)
         display["used"] = rounder(x: temp_used)
+        display["swap"] = rounder(x: temp_swap)
     }
     
     

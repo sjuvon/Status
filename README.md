@@ -5,9 +5,9 @@ Welcome.  This is a small toy app for displaying real-time RAM statistics on Mac
 Everything is written in Swift using XCode, versions 4.0.3 and 9.2 respectively.  As is, the app's specifically for Mac OS X 10.12 Sierra, although it should work for all 64-bit Mac OSs with minor tweaks.
 
 The app's still a work in progress.  Some things on the to-do list:
-  1) Add functionality for changing the stat displayed on the menu bar.  Currently, the default is the amount of RAM used.
-  2) Add functionality for displaying the top active processes, ranked by memory usage.
-  3) Extend the app to cover more things: CPU, network, battery, etc.
+  1) *Add functionality for changing the stat displayed on the menu bar.*  Currently, the default is the amount of RAM used.
+  2) *Add functionality for displaying the top active processes, ranked by memory usage.*
+  3) *Extend the app to cover more things: CPU, network, battery, etc.*
   
 Hopefully I'll get to this when time permits.  For now, I'm happy with the app as is; what started off as a quick side project turned into a great learning experience!
 

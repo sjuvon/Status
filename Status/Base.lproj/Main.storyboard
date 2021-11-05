@@ -1022,11 +1022,11 @@
                                 </textFieldCell>
                             </textField>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4S-3q-SK0">
-                                <rect key="frame" x="159" y="52" width="50" height="17"/>
+                                <rect key="frame" x="159" y="52" width="66" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pWW-il-BIE">
-                                        <rect key="frame" x="-2" y="0.0" width="54" height="17"/>
+                                        <rect key="frame" x="-2" y="0.0" width="70" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="5Qv-51-7aq">
                                             <font key="font" metaFont="systemBold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1042,7 +1042,7 @@
                                 </customSpacing>
                             </stackView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mdn-xV-LMz">
-                                <rect key="frame" x="202" y="52" width="24" height="17"/>
+                                <rect key="frame" x="215" y="52" width="24" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="MB" id="lmU-CB-1Bw">
                                     <font key="font" metaFont="system"/>

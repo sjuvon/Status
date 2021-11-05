@@ -16,7 +16,7 @@
 		1FF110FF272A1621000E4AED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF110FE272A1621000E4AED /* Assets.xcassets */; };
 		1FF11102272A1621000E4AED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF11100272A1621000E4AED /* Main.storyboard */; };
 		1FF1110B272A2126000E4AED /* ViewController_Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1110A272A2126000E4AED /* ViewController_Status.swift */; };
-		1FF1CA4E27332B9100D46C1A /* View_MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1CA4D27332B9100D46C1A /* View_MenuBar.swift */; };
+		1FF1CA4E27332B9100D46C1A /* ViewController_MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1CA4D27332B9100D46C1A /* ViewController_MenuBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		1FF11103272A1621000E4AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FF11104272A1621000E4AED /* Status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Status.entitlements; sourceTree = "<group>"; };
 		1FF1110A272A2126000E4AED /* ViewController_Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Status.swift; sourceTree = "<group>"; };
-		1FF1CA4D27332B9100D46C1A /* View_MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_MenuBar.swift; sourceTree = "<group>"; };
+		1FF1CA4D27332B9100D46C1A /* ViewController_MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_MenuBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		1FF1CA4B273320EF00D46C1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1FF1CA4D27332B9100D46C1A /* View_MenuBar.swift */,
+				1FF1CA4D27332B9100D46C1A /* ViewController_MenuBar.swift */,
 				1FF1110A272A2126000E4AED /* ViewController_Status.swift */,
 				1FAFBCA727309F7C007D0E11 /* ViewController_Settings.swift */,
 				1F14C4992732B428005A6B9C /* ViewController_List.swift */,
@@ -174,7 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F229BFD272B6B33000BC688 /* Globals.swift in Sources */,
-				1FF1CA4E27332B9100D46C1A /* View_MenuBar.swift in Sources */,
+				1FF1CA4E27332B9100D46C1A /* ViewController_MenuBar.swift in Sources */,
 				1F554076272B5F8E00545468 /* RAM.swift in Sources */,
 				1FB80C4E272C62EF00292114 /* EventMonitor.swift in Sources */,
 				1FF1110B272A2126000E4AED /* ViewController_Status.swift in Sources */,

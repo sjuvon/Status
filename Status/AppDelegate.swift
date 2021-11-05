@@ -67,7 +67,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 extension AppDelegate {
-
+    /*  All of the popover functionality.  */
+    
     @objc func togglePopover(_ sender: Any?) {
         /* Toggle the popover for the left icon. */
         if popover.isShown {

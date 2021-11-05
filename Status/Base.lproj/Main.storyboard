@@ -1085,15 +1085,15 @@
                                     <action selector="quitApp:" target="tp6-tB-7pb" id="NPk-SK-dbt"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-Fg-YAT">
-                                <rect key="frame" x="20" y="230" width="15" height="15"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFg-pM-X7C">
+                                <rect key="frame" x="331" y="241" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Kdy-Ck-Xyo">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSHomeTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="e55-sW-0uK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="changeView_settingsToStatus:" target="tp6-tB-7pb" id="ska-xD-m4t"/>
+                                    <action selector="changeView_settingsToStatus:" target="tp6-tB-7pb" id="Bn8-OL-e1s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1106,6 +1106,7 @@
     </scenes>
     <resources>
         <image name="NSGoBackTemplate" width="9" height="12"/>
+        <image name="NSHomeTemplate" width="14" height="14"/>
         <image name="NSSmartBadgeTemplate" width="14" height="14"/>
         <image name="NSTouchBarTextJustifiedAlignTemplate" width="14" height="30"/>
     </resources>

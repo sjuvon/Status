@@ -1,6 +1,6 @@
 # Status README
 
-Welcome.  This is a small toy app for displaying real-time RAM statistics on Mac OS X, the sort of stats you see in Mac's Activity Monitor.  The difference is, this app's implemented in the menu bar for better convenience.
+Welcome.  This is a small toy app for displaying real-time RAM statistics on Mac OS X, the sort of stats you see in Mac's Activity Monitor.  The difference is, this app's implemented in the menu bar for more convenience.
 
 Everything is written in Swift using XCode, versions 4.0.3 and 9.2 respectively.  As is, the app's specifically for Mac OS X 10.12 Sierra, although it should work for all 64-bit Mac OSs with minor tweaks.
 

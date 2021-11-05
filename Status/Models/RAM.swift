@@ -19,7 +19,7 @@ func rounder(x: Double) -> Double {
 func vm_stat() -> vm_statistics64? {
     /*  Mach kernel API call to retrieve memory status.  */
     let host_port: host_t = mach_host_self()
-    var host_size: mach_msg_type_number_t = mach_msg_type_number_t(
+    var host_stride: mach_msg_type_number_t = mach_msg_type_number_t(
         MemoryLayout<vm_statistics64_data_t>.stride / MemoryLayout<integer_t>.stride
     )
     
@@ -36,7 +36,7 @@ func vm_stat() -> vm_statistics64? {
             host_port,
             HOST_VM_INFO64,
             $0,
-            &host_size
+            &host_stride
         )
     }
     
@@ -58,7 +58,7 @@ func swap_usage() -> xsw_usage? {
 
 public struct RAM {
     /*  Model for RAM statistics */
-    let factor: Double = Double( Double(4096) / Double(1024*1024*1024) )
+    let factor: Double = Double( Double(vm_page_size) / Double(1024*1024*1024) )
     var display: [String:Double] = [:]
     
     

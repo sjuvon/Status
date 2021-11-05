@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-// from globals import GlobalVariables
+// from Globals import GlobalVariables
 
 
 class ViewController_Settings: NSViewController {

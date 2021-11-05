@@ -8,7 +8,7 @@
 
 import Cocoa
 import Foundation
-// from globals import GlobalVariables
+// from Globals import GlobalVariables
 
 
 struct MenuBarLeft {
@@ -18,7 +18,7 @@ struct MenuBarLeft {
     public init() {
         if let butty = MenuBarLeft.iconLeft.button {
             butty.title = "RAM:"
-            butty.action = #selector(AppDelegate().togglePopover(_:))
+            butty.action = #selector(AppDelegate().showPopover(sender: ))
         }
     }
     
@@ -41,7 +41,7 @@ struct MenuBarRight {
             )
             
             button.attributedTitle = titleAttributed
-            button.action = #selector(AppDelegate().togglePopoverRight(_:))
+            button.action = #selector(AppDelegate().showPopoverRight(sender: ))
         }
     }
     

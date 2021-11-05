@@ -8,8 +8,8 @@
 
 import Cocoa
 /*  from EventMonitor import EventMonitor
-    from globals import GlobalVariables
-    from View_MenuBar import menuBar
+    from Globals import GlobalVariables
+    from View_MenuBar import MenuBarLeft, MenuBarRight
 */
 
 
@@ -20,23 +20,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var eventMonitor: EventMonitor?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
-        //popover.contentViewController = ViewController_Status.freshController()
-        //popoverRight.contentViewController = ViewController_Settings.freshController()
         app_refresher()
-        vm_Timer()
+        app_timer()
         
         eventMonitor = EventMonitor( mask: [.leftMouseDown, .rightMouseDown] ) {
-            [weak self] event in if let strongSelf = self,
-                strongSelf.popover.isShown {
+            [weak self] event in
+            
+                if let strongSelf = self, strongSelf.popover.isShown {
                     strongSelf.closePopover(sender: event)
                 }
         }
-
+        
     }
     
     
-    func vm_Timer() {
+    func app_timer() {
         /*  Timer for updating state of app.  */
         let vm_statsTimer = Timer.scheduledTimer(
             timeInterval: 2.0,
@@ -64,10 +62,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             object: nil
         )
     }
-    
+
+}
+
+
+extension AppDelegate {
 
     @objc func togglePopover(_ sender: Any?) {
-        /* Toggle the popover. */
+        /* Toggle the popover for the left icon. */
         if popover.isShown {
             closePopover(sender: sender)
         } else {
@@ -76,8 +78,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    func showPopover(sender: Any?) {
-        /* Show the popover. */
+    @objc func showPopover(sender: Any?) {
+        /* Show the popover for the left icon. */
         popover.contentViewController = ViewController_Status.freshController()
         if let button = MenuBarRight.iconRight.button {
             popover.show(
@@ -90,18 +92,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    func closePopover(sender: Any?) {
-        /* Close the popover. */
-        popover.performClose(sender)
-        eventMonitor?.stop()
-    }
-    
-    
-    
-    
-    // For popoverRight:
     @objc func togglePopoverRight(_ sender: Any?) {
-        /* Toggle the popoverRight. */
+        /* Toggle popover for the right icon. */
         if popover.isShown {
             closePopover(sender: sender)
         } else {
@@ -110,8 +102,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    func showPopoverRight(sender: Any?) {
-        /* Show the popoverRight. */
+    @objc func showPopoverRight(sender: Any?) {
+        /* Show the popover for the right icon. */
         popover.contentViewController = ViewController_Settings.freshController()
         if let button = MenuBarRight.iconRight.button {
             popover.show(
@@ -123,5 +115,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         eventMonitor?.start()
     }
 
+    
+    func closePopover(sender: Any?) {
+        /* Close the popover altogether. */
+        popover.performClose(sender)
+        eventMonitor?.stop()
+    }
+
+    
 }
 

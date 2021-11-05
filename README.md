@@ -7,7 +7,8 @@ Everything is written in Swift using XCode, versions 4.0.3 and 9.2 respectively.
 The app's still a work in progress.  Some things on the to-do list:
   1) *Add functionality for changing the stat displayed on the menu bar.*  Currently, the default is the amount of RAM used.
   2) *Add functionality for displaying the top active processes, ranked by memory usage.*
-  3) *Extend the app to cover more things: CPU, network, battery, etc.*
+  3) *Figure out how to compute Activity Monitor's Memory Pressure.*  This will open doors to more functionality.
+  4) *Extend the app to cover more things: CPU, network, battery, etc.*
   
 Hopefully I'll get to this when time permits.  For now, I'm happy with the app as is; what started off as a quick side project turned into a great learning experience!
 

@@ -2,7 +2,7 @@
 
 Welcome.  This is a small toy app for displaying real-time RAM status on Mac OS X, the sort of stuff you see in Mac's Activity Monitor.  The difference is, this app's implemented in the menu bar for more convenience.
 
-Everything is written in Swift using XCode, versions 4.0.3 and 9.2 respectively.  As is, the app's specifically for Mac OS X 10.12 Sierra (with 8GB RAM), although with minor tweaks, it should work for all 64-bit Mac OSs and RAM configurations.
+Everything is written in Swift using XCode, versions 4.0.3 and 9.2 respectively.  The app's developed for Mac OS X 10.12 Sierra, although it should work for all 64-bit Mac OSs.
 
 The app's still a work in progress.  Some things on the to-do list:
   1) *Add functionality for changing the stat displayed on the menu bar.*  Currently, the default is the amount of RAM used.

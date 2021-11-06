@@ -4,7 +4,7 @@ Welcome.  This is a small app for displaying real-time system status on Mac OS X
 
 Everything is written in Swift via XCode, versions 4.0.3 and 9.2 respectively.  Although the app was made for OS X 10.12 Sierra, with appropriate tweaks, it should work for all 64-bit Macs.
 
-This is an on-going toy project.  Currently, the app only shows basic RAM stats; the door's wide open for more things to do:
+This is an on-going project.  Currently, the app only shows basic RAM stats; the door's wide open for more things to do:
   1) *Add functionality for displaying the top active processes, ranked by memory usage.*
   2) *Figure out how to compute Activity Monitor's Memory Pressure.*  This will open doors to more functionality.
   3) *Extend the app to cover more things: CPU, network, battery, etc.*

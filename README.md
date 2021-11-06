@@ -16,4 +16,4 @@ There's been a lot of trial and error in this project; here are some resources t
   - The various Objective-C headers found in /usr/include;
   - Alexis Gallagher and [his posts over at Stack Overflow](https://stackoverflow.com/users/577888/algal);
   - Mike Bradshaw and [his posts on Stack Overflow](https://stackoverflow.com/users/475228/bmike);
-  - And finally, [Serhiy Mytrovtsiy and his app](https://github.com/exelban/stats).  Check out Serhiy's app if you'd like an excellent, production-grade app that accomplishes everything Status is meant to do, and then some!
+  - And finally, [Serhiy Mytrovtsiy and his app](https://github.com/exelban/stats).  Check out Serhiy's app if you'd like an excellent, production-grade app that accomplishes everything Status would like to do, and then some!

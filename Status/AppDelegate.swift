@@ -69,19 +69,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate {
     /*  All of the popover functionality.  */
     
-    @objc func togglePopover(_ sender: Any?) {
+    @objc func togglePopoverLeft(_ sender: Any?) {
         /* Toggle the popover for the left icon. */
         if popover.isShown {
             closePopover(sender: sender)
         } else {
-            showPopover(sender: sender)
+            showPopoverLeft(sender: sender)
         }
     }
     
     
-    @objc func showPopover(sender: Any?) {
+    @objc func showPopoverLeft(sender: Any?) {
         /* Show the popover for the left icon. */
-        popover.contentViewController = ViewController_Status.freshController()
+        popover.contentViewController = ViewController_Settings.freshController()
         if let button = MenuBarRight.iconRight.button {
             popover.show(
                 relativeTo: button.bounds,
@@ -105,7 +105,7 @@ extension AppDelegate {
     
     @objc func showPopoverRight(sender: Any?) {
         /* Show the popover for the right icon. */
-        popover.contentViewController = ViewController_Settings.freshController()
+        popover.contentViewController = ViewController_Status.freshController()
         if let button = MenuBarRight.iconRight.button {
             popover.show(
                 relativeTo: button.bounds,

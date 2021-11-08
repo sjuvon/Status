@@ -19,7 +19,7 @@ struct MenuBarLeft {
     public init() {
         if let butty = MenuBarLeft.iconLeft.button {
             butty.title = "RAM:"
-            butty.action = #selector(AppDelegate().showPopover(sender: ))
+            butty.action = #selector(AppDelegate().showPopoverLeft(sender: ))
         }
     }
     

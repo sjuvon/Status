@@ -1,6 +1,6 @@
 # Status README
 
-Welcome.  Status is an app for displaying real-time system status on Mac OS X, like Mac's own Activity Monitor.  The difference is, this one's implemented in the menu bar for more convenience.
+Welcome.  Status is an app for displaying real-time system stats on Mac OS X, like Mac's own Activity Monitor.  The difference is, this one's implemented in the menu bar for more convenience.
 
 Everything is written in Swift via XCode, versions 4.0.3 and 9.2 respectively.  Although Status has been made for OS X 10.12 Sierra, with appropriate tweaks, it should work for all 64-bit Macs.
 

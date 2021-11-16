@@ -1022,11 +1022,11 @@
                                 </textFieldCell>
                             </textField>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4S-3q-SK0">
-                                <rect key="frame" x="159" y="52" width="66" height="17"/>
+                                <rect key="frame" x="159" y="52" width="50" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pWW-il-BIE">
-                                        <rect key="frame" x="-2" y="0.0" width="70" height="17"/>
+                                        <rect key="frame" x="-2" y="0.0" width="54" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="5Qv-51-7aq">
                                             <font key="font" metaFont="systemBold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1074,8 +1074,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFg-pM-X7C">
+                                <rect key="frame" x="334" y="241" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSHomeTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="e55-sW-0uK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeView_settingsToStatus:" target="tp6-tB-7pb" id="Bn8-OL-e1s"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cpr-MK-W3e">
-                                <rect key="frame" x="147" y="117" width="66" height="32"/>
+                                <rect key="frame" x="147" y="99" width="66" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Usv-ql-aEB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1085,15 +1096,15 @@
                                     <action selector="quitApp:" target="tp6-tB-7pb" id="NPk-SK-dbt"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFg-pM-X7C">
-                                <rect key="frame" x="331" y="241" width="18" height="18"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pn-Me-7Tl">
+                                <rect key="frame" x="116" y="136" width="128" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSHomeTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="e55-sW-0uK">
+                                <buttonCell key="cell" type="push" title="Activity Monitor" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fXl-bl-4C0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="changeView_settingsToStatus:" target="tp6-tB-7pb" id="Bn8-OL-e1s"/>
+                                    <action selector="settingsOpenActivityMonitor:" target="tp6-tB-7pb" id="2jX-vt-VkQ"/>
                                 </connections>
                             </button>
                         </subviews>

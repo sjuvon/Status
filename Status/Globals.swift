@@ -6,6 +6,7 @@
 //  Copyright © 2021 Sjuvon Chung. All rights reserved.
 //
 
+import Cocoa
 import Foundation
 // from RAM import RAM
 

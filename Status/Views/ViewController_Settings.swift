@@ -20,6 +20,12 @@ class ViewController_Settings: NSViewController {
         }
     }
     
+    
+    @IBAction func settingsOpenActivityMonitor(_ sender: NSButton) {
+        NSWorkspace.shared.launchApplication("Activity Monitor")
+    }
+    
+    
     @IBAction func quitApp(_ sender: NSButton) {
         NSApplication.shared.terminate(sender)
     }
